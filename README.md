@@ -52,7 +52,7 @@ sudo ./kset.sh
 ```
 
 ## Connecting to any other WPA network
-Change data inside wpa.conf file, then move file to directory /etc/wpa_supplicant/
+Change data inside **wpa.conf** file, then move file to directory /etc/wpa_supplicant/
 To run script use following commands:
 ```
 # Make sure your interface is up
@@ -63,5 +63,12 @@ sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa.conf
 
 # Start dhclient on interface wlan0
 sudo dhclient wlan0
+```
 
+## Connecting to DuoCARNET services
+Make sure to have package **pppoeconf** installed on your system, when configuring PPPoE make sure to select *wlan0* or any other wireless device as default device.
+
+Connect to router using one of the above methods and then start PPPoE connection with following command:
+```
+sudo pon dsl-provider # Change dsl-provider with name of your PPPoE service
 ```
